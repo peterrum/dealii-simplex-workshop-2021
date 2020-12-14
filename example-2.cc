@@ -103,7 +103,14 @@ test(const unsigned int degree, const std::string &file_name)
 
   constraints.distribute(x);
 
+  DataOutBase::VtkFlags flags;
+
+  if (tria.get_reference_cell_types().size() == 1 && // TODO: only working for hypercube mesh
+      tria.get_reference_cell_types()[0] == ReferenceCell::get_hypercube(dim)) //
+    flags.write_higher_order_cells = true;                                     //
+
   DataOut<dim> data_out;
+  data_out.set_flags(flags);
   data_out.attach_dof_handler(dof_handler);
   x.update_ghost_values();
   data_out.add_data_vector(dof_handler, x, "solution");
