@@ -127,10 +127,10 @@ main(int argc, char **argv)
     {
       test<PoissonOperatorMatrixBased<2>>(degree, SOURCE_DIR "/mesh/box_2D_quad.msh");
       test<PoissonOperatorMatrixBased<2>>(degree, SOURCE_DIR "/mesh/box_2D_tri.msh");
-      // TODO: process actual mixed mesh
+      test<PoissonOperatorMatrixBased<2>>(degree, SOURCE_DIR "/mesh/box_2D_mixed.msh");
 
       test<PoissonOperatorMatrixFree<2>>(degree, SOURCE_DIR "/mesh/box_2D_quad.msh");
       test<PoissonOperatorMatrixFree<2>>(degree, SOURCE_DIR "/mesh/box_2D_tri.msh");
-      // TODO: process actual mixed mesh
+      test<PoissonOperatorMatrixFree<2>>(degree, SOURCE_DIR "/mesh/box_2D_mixed.msh");
     }
 }
