@@ -2,7 +2,7 @@
 
 Repo with the course materials.
 
-## Example 1: pure pure quadrilateral/triangle mesh
+## Example 1: pure quadrilateral/triangle mesh
 
 ![Example 1](doc/example-1.png)
 
